@@ -1,0 +1,17 @@
+{
+  "name": "gmail-conversions",
+  "version": "0.0.0",
+  "authors": [
+    "Oskar Zabik <hello@oskar.io>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+  }
+}

@@ -1,0 +1,122 @@
+/* global */
+*, *:before, *:after {
+	box-sizing: border-box;
+}
+
+body, html {
+	height: 100%;
+	margin: 0;
+	font-family: 'Roboto';
+	font-size: 100%;
+	color: #373737;
+}
+
+/* text helpers */
+.text-green {
+	color: #7ED321;
+}
+
+.text-red {
+	color: #E94A2F;
+}
+
+
+/* preloader */
+.plus	{
+	pointer-events: none;
+	position: relative;
+	top: 15px;
+	left: 15px;
+	-webkit-transition: .4s ease-in-out;
+	        transition: .4s ease-in-out;
+}
+body.active .plus {
+	opacity: 0;
+}
+
+
+/* inputs */
+input {
+	border: 3px solid #eee;
+	border-radius: 3px;
+	line-height: 40px;
+	height: 40px;
+	width: 300px;
+	font-size: 1rem;
+	padding: 0 10px;
+}
+
+
+/* google button (Web Component) */
+.google-button::shadow input {
+	border: 0;
+	height: 40px;
+	line-height: 40px;
+	width: 240px;
+	border-radius: 5px;
+	white-space: nowrap;
+  cursor: pointer;
+  color: white;
+	background: #dd4b39;
+	font-size: .9rem;
+	padding-left: 42px;
+	font-weight: bold;
+}
+
+.google-button {
+	position: relative;
+}
+
+.google-button:before {
+	content: "G";
+	position: absolute;
+	left: 0;
+	width: 42px;
+	text-align: center;
+	color: white;
+	border-right: 1px solid black;
+	height: 100%;
+}
+
+
+/* headings */
+h1 {
+	/*font-size: 33px;*/
+	font-size: 1.8rem;
+	padding-bottom: 2rem;
+	font-weight: 500;
+	margin: 0;
+}
+
+
+/* center page content
+   & add some in/out animation
+   on hash change */
+.page {
+	position: absolute;
+	top: 50%;
+	-webkit-transform: translateY(-2150%);
+	        transform: translateY(-2150%);
+  text-align: center;
+  -webkit-transition: all 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+          transition: all 1s cubic-bezier(0.680, -0.550, 0.265, 1.550);
+	width: 100%;
+}
+
+.page:target {
+	-webkit-transform: translateY(-50%);
+	        transform: translateY(-50%);
+}
+
+
+/* hide app when loading content */
+conversion-rate-app::shadow {
+	-webkit-transition: opacity .4s ease-in-out;
+	        transition: opacity .4s ease-in-out;
+	opacity: 0;
+}
+
+.active conversion-rate-app::shadow {
+	opacity: 1;
+}
+
