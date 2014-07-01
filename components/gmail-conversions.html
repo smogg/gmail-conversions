@@ -1,0 +1,31 @@
+<polymer-element name="gmail-conversions" 
+		attributes="won, lost, wonLabel, lostLabel">
+	<template>
+		<div class="result">
+      You win <span class="text-large">{{conversion_rate}}%</span> of your leads on average.
+    </div>
+    <div class="result">
+      That's based on <span class="text-medium">{{total}}</span> total leads in your inbox.
+    </div>
+		<div class="summary">
+			<div class="left">
+				<span>{{lostLabel}}</span>
+				{{lost}}
+			</div><div class="right">
+				<span>{{wonLabel}}</span>
+				{{won}}
+			</div>
+		</div>
+	</template>
+	<script>
+		Polymer({
+			// defaults:
+			conversion_rate: 0,
+			total: 0,
+			won: 0,
+			lost: 0,
+			wonLabel: 'won',
+			lostLabel: 'lost'
+		})
+	</script>
+</polymer-element>
