@@ -12,25 +12,41 @@
 
   <!-- App styles -->
   <link rel="stylesheet" href="css/main.css">
+
+  <!-- Polymer polyfills -->
+  <script src="bower_components/platform/platform.js"></script>
+
+  <!-- Import components -->
+  <link rel="import" href="bower_components/google-signin/google-signin.html">
+  <link rel="import" href="components/gmail-conversions.html">
+
 </head>
 <body unresolved>
   <!-- preloader -->
   <div class="plus"></div>
-
+  
   <div id="one" class="page">
-	  <!-- Sign in page -->
+    <h1>Wanna you know your email conversion rates?</h1>
+	  <google-signin class="google-button"
+      labelSignin="Sign in with Google"
+      clientId="528053660700-jttl1karv0nrhfckqpm38crc531cucj6.apps.googleusercontent.com"
+      scopes="https://www.googleapis.com/auth/gmail.readonly"></google-signin>
   </div>
   
+  <!-- ask about lost label -->
   <div id="two" class="page">
-	  <!-- ask about lost label -->
+    <h1>How do you label your <span class="text-red">lost</span> leads?</h1>
+    <input type="text" id="lost" placeholder='e.g. "leads-lost"'>
   </div>
 
+  <!-- ask about won label -->
   <div id="three" class="page">
-	  <!-- ask about won label -->
+    <h1>How do you label your <span class="text-green">won</span> leads?</h1>
+    <input type="text" id="won" placeholder='e.g. "leads-won"'>
   </div>
 
   <div id="four" class="page">
-	  <!-- display results -->
+    <gmail-conversions></gmail-conversions>
   </div>
 
   <script src="js/app.js"></script>

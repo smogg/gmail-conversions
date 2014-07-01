@@ -13,5 +13,6 @@
     "tests"
   ],
   "dependencies": {
+    "google-signin": "GoogleWebComponents/google-signin#~0.0.7"
   }
 }
