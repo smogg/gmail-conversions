@@ -1,31 +1,67 @@
 <polymer-element name="gmail-conversions" 
-		attributes="won, lost, wonLabel, lostLabel">
-	<template>
-		<div class="result">
+    attributes="won, lost, wonLabel, lostLabel">
+  <template>
+    <style>
+      .result {
+        font-size: 1.4rem;
+        line-height: 1.5;
+        color: #5E5E5E;
+      }
+
+      .text-large {
+        font-size: 2.4rem;
+        color: #373737;
+      }
+
+      .text-medium {
+        font-size: 1.8rem;
+        color: #373737;
+      }
+      
+      .summary div:first-child { border-right: 1px solid #f1f1f1; }
+      .summary div {
+        display: inline-block;
+        margin-top: 30px;
+        padding: 20px;
+        border-top: 1px solid #f1f1f1;
+      }
+      .summary div span { 
+        display: block; 
+        color: #7ED321;
+        text-transform: uppercase;
+        font-size: .6rem;
+        font-weight: 900;
+      }
+      .summary div:nth-child(2) span { color: #E94A2F;}
+    </style>
+    <div class="result">
       You win <span class="text-large">{{conversion_rate}}%</span> of your leads on average.
     </div>
     <div class="result">
-      That's based on <span class="text-medium">{{total}}</span> total leads in your inbox.
+      That's based on <span class="text-medium">{{won + lost}}</span> total leads in your inbox.
     </div>
-		<div class="summary">
-			<div class="left">
-				<span>{{lostLabel}}</span>
-				{{lost}}
-			</div><div class="right">
-				<span>{{wonLabel}}</span>
-				{{won}}
-			</div>
-		</div>
-	</template>
-	<script>
-		Polymer({
-			// defaults:
-			conversion_rate: 0,
-			total: 0,
-			won: 0,
-			lost: 0,
-			wonLabel: 'won',
-			lostLabel: 'lost'
-		})
-	</script>
+    <div class="summary">
+      <div class="left">
+        <span>{{lostLabel}}</span>
+        {{lost}}
+      </div><div class="right">
+        <span>{{wonLabel}}</span>
+        {{won}}
+      </div>
+    </div>
+  </template>
+  <script>
+    Polymer({
+      // defaults:
+      get conversion_rate() {
+        var rate = this.won * 100/ (this.won + this.lost);
+        rate = Math.round(rate * 100)/100;
+        return rate ? rate : 0 // in case of NaN
+      },
+      won: 0,
+      lost: 0,
+      wonLabel: 'won',
+      lostLabel: 'lost'
+    })
+  </script>
 </polymer-element>
