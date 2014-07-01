@@ -68,14 +68,16 @@ input {
 }
 
 .google-button:before {
-	content: "G";
+	content: "";
+	background: url(../img/gplus-logo.png) no-repeat center center;
 	position: absolute;
-	left: 0;
+	left: 5px;
 	width: 42px;
 	text-align: center;
 	color: white;
 	border-right: 1px solid black;
 	height: 100%;
+	pointer-events: none;
 }
 
 
