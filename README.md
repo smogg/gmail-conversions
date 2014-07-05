@@ -1,4 +1,4 @@
-This mini-app displayes email-lead conversion rates based on provided label names. It's a result of tutorial publishes here: [add_link]()
+This mini-app displayes email-lead conversion rates based on provided label names. It's a result of tutorial publishes here: [Playing with Gmail API and Polymer](http://blog.oskar.io/playing-with-gmail-api-and-polymer)
 
 ## Uses
 - [Polymer](http://www.polymer-project.org/)
